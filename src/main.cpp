@@ -128,23 +128,7 @@ void setup()
   pCharacteristic_1_3 = pService_1->createCharacteristic(
       CHARACTERISTIC_UUID_1_W,
       BLECharacteristic::PROPERTY_WRITE);
-  /*
-  pCharacteristic_1_4 = pService_1->createCharacteristic(
-                      CHARACTERISTIC_UUID_1_N,
-                      BLECharacteristic::PROPERTY_NOTIFY
-                    );
 
-  pCharacteristic_2_1 = pService_2->createCharacteristic(
-                      CHARACTERISTIC_UUID_2_W_N,
-                      BLECharacteristic::PROPERTY_WRITE  |
-                      BLECharacteristic::PROPERTY_NOTIFY 
-                    );
-
- pCharacteristic_2_2 = pService_2->createCharacteristic(
-                      CHARACTERISTIC_UUID_2_N,
-                      BLECharacteristic::PROPERTY_NOTIFY 
-                    );
-*/
   pCharacteristic_3_1 = pService_3->createCharacteristic(
                         BATTERY_LEVEL_CHARACTERISTIC_UUID_R_N, 
                         BLECharacteristic::PROPERTY_READ
@@ -171,15 +155,6 @@ void setup()
   BatteryLevelDescriptor->setValue("Percentage 0 - 100");
   pCharacteristic_3_1->addDescriptor(BatteryLevelDescriptor);
 
-  //pCharacteristic_1_1 ->setValue("");
-
-  /*pCharacteristic_1_2->addDescriptor(new BLE2902());
-  
-  pCharacteristic_1_4->addDescriptor(new BLE2902());
-
-  pCharacteristic_2_1->addDescriptor(new BLE2902());
-  pCharacteristic_2_1->addDescriptor(new BLE2902());
-*/
 
   // Start the service
   pService_1->start();
